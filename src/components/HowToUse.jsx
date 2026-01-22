@@ -35,7 +35,7 @@ export default function HowToUse() {
   return (
     <section id="how" className="py-24 relative overflow-hidden">
       {/* soft bg */}
-      <div className="absolute opacity-25 inset-0 bg-linear-to-b  from-white to-[var(--secondary-color)]/30"></div>
+      <div className="absolute opacity-25 inset-0 bg-linear-to-b  from-white to-[var(--secondary-color)]/84"></div>
 
       <div className="relative max-w-7xl mx-auto px-6">
 

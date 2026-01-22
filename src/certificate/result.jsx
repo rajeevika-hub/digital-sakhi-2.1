@@ -101,7 +101,7 @@ const ResultPage = () => {
   const isPass = result.result === "pass";
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-4">
+    <div className="flex items-center justify-center min-h-screen p-4 mt-10">
       <div className="w-full max-w-2xl p-6 text-center bg-white shadow-xl rounded-2xl">
 
         {/* ICON */}

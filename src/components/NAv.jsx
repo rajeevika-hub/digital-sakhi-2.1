@@ -53,7 +53,7 @@ export default function Nav() {
           {/* CTA */}
           <NavLink
             to="/register"
-            className="ml-10 px-6 py-3 rounded-full text-sm font-medium transition active:scale-95"
+            className="ml-6 inline-flex justify-center px-6 py-3 rounded-full text-sm font-semibold"
             style={{
               backgroundColor: "rgba(0,0,0,0.04)",
               color: "var(--primary-color)",

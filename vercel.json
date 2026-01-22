@@ -18,6 +18,15 @@
       "dest": "/images/$1"
     },
     {
+      "src": "/pdfs/(.*)",
+      "dest": "/pdfs/$1"
+    },
+    {
+      "src": "/how/(.*)",
+      "dest": "/how/$1"
+    },
+
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }

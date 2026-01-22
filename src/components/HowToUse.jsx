@@ -1,55 +1,108 @@
-export default function Impact() {
-  const stats = [
-    { value: "3,000+", label: "पूर्ण रूप से प्रशिक्षित महिलाएं" },
-    { value: "4,000+", label: "आंशिक रूप से प्रशिक्षित" },
-    { value: "7,000+", label: "SHG सदस्य शामिल" },
-    { value: "300+", label: "डिजिटल मार्केटिंग प्रशिक्षु" },
+export default function HowToUse() {
+  const steps = [
+    {
+      step: "01",
+      title: "मॉड्यूल चुनें",
+      desc: "होम पेज पर उपलब्ध मॉड्यूल में से अपना कोर्स चुनें।",
+      img: "/how/module.png",
+    },
+    {
+      step: "02",
+      title: "विषय पढ़ें",
+      desc: "मॉड्यूल के अंदर दिए गए विषयों को एक-एक करके खोलें।",
+      img: "/how/topics.png",
+    },
+    {
+      step: "03",
+      title: "वीडियो • नोट्स • प्रश्नोत्तरी",
+      desc: "हर विषय के लिए वीडियो देखें, नोट्स पढ़ें और प्रश्नोत्तरी हल करें।",
+      img: "/how/learn.png",
+    },
+    {
+      step: "04",
+      title: "अंतिम परीक्षा दें",
+      desc: "सभी विषय पूरे होने के बाद अंतिम परीक्षा अनलॉक हो जाती है।",
+      img: "/how/test.png",
+    },
+    {
+      step: "05",
+      title: "प्रमाणपत्र प्राप्त करें",
+      desc: "अंतिम परीक्षा उत्तीर्ण करने पर तुरंत प्रमाणपत्र डाउनलोड करें।",
+      img: "/how/certificate.png",
+    },
   ];
 
   return (
-    <section className="py-24">
-      <div className="max-w-6xl mx-auto px-6 text-center">
+    <section id="how" className="py-24 relative overflow-hidden">
+      {/* soft bg */}
+      <div className="absolute opacity-25 inset-0 bg-linear-to-b from-white to-var(--secondary-color)/30"></div>
+
+      <div className="relative max-w-7xl mx-auto px-6">
 
         {/* HEADING */}
-        <div className="mb-16 reveal opacity-0 translate-y-16 transition-all duration-700">
+        <div className="text-center mb-20 reveal opacity-0 translate-y-16 transition-all duration-700">
           <span
-            className="inline-block mb-4 px-4 py-1 rounded-full text-sm font-semibold"
+            className="inline-block mb-4 px-5 py-2 rounded-full text-sm font-semibold"
             style={{
               backgroundColor: "var(--secondary-color)",
               color: "var(--primary-color)",
             }}
           >
-            प्रभाव
+            यह कैसे काम करता है
           </span>
 
           <h2 className="text-3xl md:text-4xl font-extrabold">
-            ज़मीनी स्तर पर वास्तविक प्रभाव
+            डिजिटल सखी प्लेटफ़ॉर्म का उपयोग कैसे करें
           </h2>
 
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-            डिजिटल सखी पहल ने ग्रामीण समुदायों में
-            सामाजिक, आर्थिक और डिजिटल स्तर पर
-            मापने योग्य सकारात्मक प्रभाव डाला है।
+            चरण-दर-चरण प्रक्रिया का पालन करके कोर्स पूरा करें
+            और प्रमाणपत्र प्राप्त करें 🌸
           </p>
         </div>
 
-        {/* STATS */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
-          {stats.map((item, i) => (
+        {/* STEPS */}
+        <div className="space-y-20">
+          {steps.map((item, i) => (
             <div
               key={i}
-              className="reveal opacity-0 translate-y-16 transition-all duration-700 rounded-3xl p-8 shadow hover:shadow-xl"
-              style={{ backgroundColor: "var(--secondary-color)" }}
+              className={`flex flex-col md:flex-row items-center gap-10 ${
+                i % 2 !== 0 ? "md:flex-row-reverse" : ""
+              } reveal opacity-0 translate-y-16 transition-all duration-700`}
             >
-              <h3
-                className="text-4xl font-extrabold"
-                style={{ color: "var(--primary-color)" }}
-              >
-                {item.value}
-              </h3>
-              <p className="mt-2 text-gray-700 font-medium">
-                {item.label}
-              </p>
+              {/* IMAGE */}
+              <div className="md:w-1/2">
+                <div className="rounded-xl overflow-hidden shadow-xl bg-white">
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    className="w-full overflow-hidden rounded-2xl h-65 md:h-65 object-contain p-6"
+                  />
+                </div>
+              </div>
+
+              {/* TEXT */}
+              <div className="md:w-1/2">
+                <div className="bg-white/90 backdrop-blur rounded-xl p-8 shadow-lg">
+                  <div
+                    className="inline-flex items-center justify-center w-12 h-12 rounded-full font-bold text-lg mb-4"
+                    style={{
+                      backgroundColor: "var(--secondary-color)",
+                      color: "var(--primary-color)",
+                    }}
+                  >
+                    {item.step}
+                  </div>
+
+                  <h3 className="text-xl md:text-2xl font-bold mb-3">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-gray-700 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
             </div>
           ))}
         </div>

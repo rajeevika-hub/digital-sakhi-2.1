@@ -59,7 +59,7 @@ export default function Nav() {
               color: "var(--primary-color)",
             }}
           >
-          🎓 Certificate
+          Certificate
           </NavLink>
 
           <ThemeSwitcher />

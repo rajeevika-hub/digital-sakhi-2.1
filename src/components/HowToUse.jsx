@@ -2,32 +2,32 @@ export default function HowToUse() {
   const steps = [
     {
       step: "01",
-      title: "मॉड्यूल चुनें",
-      desc: "होम पेज पर उपलब्ध मॉड्यूल में से अपना कोर्स चुनें।",
+      title: "Module Select Karein",
+      desc: "Home page par available modules me se apna course select karein.",
       img: "/how/module.png",
     },
     {
       step: "02",
-      title: "विषय पढ़ें",
-      desc: "मॉड्यूल के अंदर दिए गए विषयों को एक-एक करके खोलें।",
+      title: "Topics Padhein",
+      desc: "Module ke andar diye gaye topics ko ek-ek karke open karein.",
       img: "/how/topics.png",
     },
     {
       step: "03",
-      title: "वीडियो • नोट्स • प्रश्नोत्तरी",
-      desc: "हर विषय के लिए वीडियो देखें, नोट्स पढ़ें और प्रश्नोत्तरी हल करें।",
+      title: "Video • Notes • Quiz",
+      desc: "Har topic ke liye video dekhein, notes padhein aur quiz solve karein.",
       img: "/how/learn.png",
     },
     {
       step: "04",
-      title: "अंतिम परीक्षा दें",
-      desc: "सभी विषय पूरे होने के बाद अंतिम परीक्षा अनलॉक हो जाती है।",
+      title: "Final Test Dein",
+      desc: "Sab topics complete hone ke baad final test unlock hota hai.",
       img: "/how/test.png",
     },
     {
       step: "05",
-      title: "प्रमाणपत्र प्राप्त करें",
-      desc: "अंतिम परीक्षा उत्तीर्ण करने पर तुरंत प्रमाणपत्र डाउनलोड करें।",
+      title: "Certificate Paayein",
+      desc: "Final test pass karne par turant certificate download karein.",
       img: "/how/certificate.png",
     },
   ];
@@ -35,7 +35,7 @@ export default function HowToUse() {
   return (
     <section id="how" className="py-24 relative overflow-hidden">
       {/* soft bg */}
-      <div className="absolute opacity-25 inset-0 bg-linear-to-b from-white to-var(--secondary-color)/30"></div>
+      <div className="absolute opacity-25 inset-0 bg-linear-to-b  from-white to-[var(--secondary-color)]/30"></div>
 
       <div className="relative max-w-7xl mx-auto px-6">
 
@@ -48,16 +48,16 @@ export default function HowToUse() {
               color: "var(--primary-color)",
             }}
           >
-            यह कैसे काम करता है
+            How It Works
           </span>
 
           <h2 className="text-3xl md:text-4xl font-extrabold">
-            डिजिटल सखी प्लेटफ़ॉर्म का उपयोग कैसे करें
+            Digital Sakhi Platform Kaise Use Karein
           </h2>
 
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-            चरण-दर-चरण प्रक्रिया का पालन करके कोर्स पूरा करें
-            और प्रमाणपत्र प्राप्त करें 🌸
+            Step-by-step process follow karke course complete karein
+            aur certificate haasil karein 🌸
           </p>
         </div>
 
@@ -76,7 +76,7 @@ export default function HowToUse() {
                   <img
                     src={item.img}
                     alt={item.title}
-                    className="w-full overflow-hidden rounded-2xl h-65 md:h-65 object-contain p-6"
+                    className="w-full overflow-hidden rounded-2xl h-[260px] md:h-[320px] object-contain p-6"
                   />
                 </div>
               </div>

@@ -80,7 +80,7 @@ export default function Nav() {
 {/* MOBILE MENU */}
 <div
   className={`md:hidden transition-all duration-500 ${
-    open ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+    open ? "max-h-screen flex" : "max-h-0 hidden"
   }`}
   style={{
     backgroundColor: "rgba(255,255,255,0.95)",

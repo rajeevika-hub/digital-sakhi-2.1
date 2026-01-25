@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import ThemeSwitcher from "./ThemeSwitcher";
+import LanguageToggle from "./components/LanguageToggle";
+
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -63,6 +65,7 @@ export default function Nav() {
           </NavLink>
 
           <ThemeSwitcher />
+          <LanguageToggle />
         </div>
 
 <button
@@ -131,6 +134,8 @@ export default function Nav() {
       style={{ backgroundColor: "rgba(0,0,0,0.04)" }}
     >
       <ThemeSwitcher />
+      <LanguageToggle />
+
     </div>
   </div>
 </div>

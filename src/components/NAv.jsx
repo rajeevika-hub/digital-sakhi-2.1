@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import ThemeSwitcher from "./ThemeSwitcher";
-import LanguageToggle from "./components/LanguageToggle";
+import LanguageToggle from "./LanguageToggle";
 
 
 export default function Nav() {

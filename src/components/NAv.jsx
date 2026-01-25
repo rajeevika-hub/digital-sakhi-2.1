@@ -130,10 +130,19 @@ export default function Nav() {
     </NavLink>
 
     {/* THEME SWITCHER – MOBILE FIX */}
-    <div className="mt-4 flex flex-col items-center justify-center rounded-xl py-3"
+    <div className="mt-4 flex  justify-center rounded-xl py-3"
       style={{ backgroundColor: "rgba(0,0,0,0.04)" }}
     >
       <ThemeSwitcher />
+     
+      <LanguageToggle />
+
+    </div>
+     {/* launguage SWITCHER – MOBILE FIX */}
+       <div className="mt-4 flex  justify-center rounded-xl py-3"
+      style={{ backgroundColor: "rgba(0,0,0,0.04)" }}
+    >
+    
      
       <LanguageToggle />
 

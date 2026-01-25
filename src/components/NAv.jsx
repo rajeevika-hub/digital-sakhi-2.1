@@ -135,8 +135,7 @@ export default function Nav() {
     >
       <ThemeSwitcher />
      
-      <LanguageToggle />
-
+    
     </div>
      {/* launguage SWITCHER – MOBILE FIX */}
        <div className="mt-4 flex  justify-center rounded-xl py-3"

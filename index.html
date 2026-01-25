@@ -60,5 +60,18 @@
       }
     </script>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+function removeGoogleBar() {
+  const iframe = document.querySelector("iframe.goog-te-banner-frame");
+  if (iframe) {
+    iframe.remove();
+  }
+  document.body.style.top = "0px";
+}
+
+// Bar ko baar-baar remove karta rahe
+setInterval(removeGoogleBar, 500);
+</script>
+
   </body>
 </html>

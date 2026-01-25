@@ -24,23 +24,30 @@ body {
 }
 
 
-
-/* 🚫 Hide Google Translate top bar */
-.goog-te-banner-frame {
+/* 🚫 Hide Google translate top banner */
+iframe.goog-te-banner-frame {
   display: none !important;
 }
 
-body {
-  top: 0 !important;
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
 }
 
-/* 🚫 Hide Google dropdown widget */
+/* Body jump fix */
+body {
+  top: 0px !important;
+}
+
+/* 🚫 Hide google widget completely */
 #google_translate_element {
   display: none !important;
 }
 
-/* 🚫 Remove Google tooltip */
+/* 🚫 Hide tooltip */
 .goog-tooltip {
   display: none !important;
 }
 
+.goog-tooltip:hover {
+  display: none !important;
+}

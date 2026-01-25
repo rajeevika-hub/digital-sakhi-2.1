@@ -22,3 +22,25 @@ body {
   
 
 }
+
+
+
+/* 🚫 Hide Google Translate top bar */
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+/* 🚫 Hide Google dropdown widget */
+#google_translate_element {
+  display: none !important;
+}
+
+/* 🚫 Remove Google tooltip */
+.goog-tooltip {
+  display: none !important;
+}
+

@@ -134,6 +134,7 @@ export default function Nav() {
       style={{ backgroundColor: "rgba(0,0,0,0.04)" }}
     >
       <ThemeSwitcher />
+      <br/>
       <LanguageToggle />
 
     </div>

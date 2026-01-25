@@ -22,7 +22,7 @@ export default function LanguageToggle() {
       {/* SWITCH */}
       <div
         onClick={() => changeLanguage(lang === "hi" ? "en" : "hi")}
-        className="w-16 h-8 flex items-center bg-gradient-to-r from-pink-500 to-purple-500 rounded-full p-1 cursor-pointer shadow-lg transition-all"
+        className="w-16 h-8 flex items-center bg-linear-to-r from-gray-700 to-blue-900 rounded-full p-1 cursor-pointer shadow-lg transition-all"
       >
         <div
           className={`bg-white w-6 h-6 rounded-full shadow-md transform duration-300 ${

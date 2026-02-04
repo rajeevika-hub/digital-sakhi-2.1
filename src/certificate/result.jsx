@@ -182,12 +182,7 @@ const ResultPage = () => {
               <FaCertificate /> Certificate
             </h2>
 
-            <img
-              src={certificate.certificateUrl}
-              alt="Certificate"
-              className="w-full mt-4 border rounded-lg"
-            />
-
+         
             <button
               onClick={downloadCertificate}
               disabled={downloading}

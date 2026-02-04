@@ -19,6 +19,10 @@ const ResultPage = () => {
   const [generating, setGenerating] = useState(false);
   const [error, setError] = useState("");
 
+  // 🔹 download related states
+  const [downloading, setDownloading] = useState(false);
+  const [success, setSuccess] = useState(false);
+
   /* -------- FETCH RESULT -------- */
   useEffect(() => {
     const fetchResult = async () => {
@@ -33,11 +37,9 @@ const ResultPage = () => {
 
         setResult(res.data);
 
-        // only generate if passed
         if (res.data.result === "pass") {
           generateCertificate();
         }
-
       } catch (err) {
         console.error("Result fetch error:", err);
         setError("परिणाम लोड नहीं हो पाया। कृपया पुनः प्रयास करें।");
@@ -59,15 +61,48 @@ const ResultPage = () => {
         { userId, examId }
       );
 
-      // already generated OR new
       if (res.data?.certificateUrl) {
         setCertificate(res.data);
       }
-
     } catch (err) {
-      console.warn("Certificate generate skipped / already exists");
+      console.warn("Certificate already exists or not generated yet");
     } finally {
       setGenerating(false);
+    }
+  };
+
+  /* -------- DOWNLOAD CERTIFICATE -------- */
+  const downloadCertificate = async () => {
+    // 🛡 safety guard
+    if (!certificate || !certificate.certificateUrl) {
+      alert("Certificate abhi ready nahi hai. Thoda wait karein.");
+      return;
+    }
+
+    try {
+      setDownloading(true);
+      setSuccess(false);
+
+      const response = await fetch(certificate.certificateUrl);
+      const blob = await response.blob();
+
+      const tempUrl = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+
+      link.href = tempUrl;
+      link.download = "Digital_Sakhi_Certificate.png";
+
+      document.body.appendChild(link);
+      link.click();
+
+      document.body.removeChild(link);
+      URL.revokeObjectURL(tempUrl);
+
+      setSuccess(true);
+    } catch (error) {
+      alert("Certificate download failed 😔");
+    } finally {
+      setDownloading(false);
     }
   };
 
@@ -89,7 +124,6 @@ const ResultPage = () => {
     );
   }
 
-  /* -------- SAFE CHECK -------- */
   if (!result) {
     return (
       <div className="flex items-center justify-center min-h-screen">
@@ -133,7 +167,7 @@ const ResultPage = () => {
           </div>
         </div>
 
-        {/* WAITING MESSAGE */}
+        {/* GENERATING MESSAGE */}
         {isPass && generating && (
           <div className="mt-6 p-4 bg-yellow-100 text-yellow-800 rounded-lg font-medium animate-pulse">
             ⏳ कृपया पेज रीलोड न करें।  
@@ -141,7 +175,7 @@ const ResultPage = () => {
           </div>
         )}
 
-        {/* CERTIFICATE */}
+        {/* CERTIFICATE SECTION */}
         {isPass && certificate && (
           <div className="mt-8">
             <h2 className="flex items-center justify-center gap-2 text-xl font-semibold text-blue-700">
@@ -154,16 +188,25 @@ const ResultPage = () => {
               className="w-full mt-4 border rounded-lg"
             />
 
-            <a
-              href={certificate.certificateUrl}
-              target="_blank"
-              rel="noreferrer"
-              download
-              className="inline-flex items-center gap-2 px-6 py-2 mt-4 text-white bg-blue-600 rounded-lg hover:bg-blue-700"
+            <button
+              onClick={downloadCertificate}
+              disabled={downloading}
+              className={`inline-flex items-center gap-2 px-6 py-2 mt-4 text-white rounded-lg
+                ${
+                  downloading
+                    ? "bg-gray-400 cursor-not-allowed"
+                    : "bg-blue-600 hover:bg-blue-700"
+                }`}
             >
               <FaDownload />
-              Download Certificate
-            </a>
+              {downloading ? "Downloading..." : "Download Certificate"}
+            </button>
+
+            {success && (
+              <div className="mt-4 p-3 text-green-700 bg-green-100 rounded-lg font-medium">
+                ✅ Certificate saved successfully 🎉
+              </div>
+            )}
           </div>
         )}
       </div>

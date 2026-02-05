@@ -12,13 +12,17 @@ const getEmbedUrl = (url) => {
     return `https://www.youtube.com/embed/${videoId}`;
   }
 
-  // youtube.com/watch?v=VIDEO_ID
   if (url.includes("watch?v=")) {
     const videoId = url.split("watch?v=")[1].split("&")[0];
     return `https://www.youtube.com/embed/${videoId}`;
   }
+  const openYouTube = (url) => {
+  if (!url) return;
+  window.open(url, "_blank"); 
+};
 
-  // already embed
+
+
   if (url.includes("youtube.com/embed")) {
     return url;
   }
@@ -73,16 +77,20 @@ export default function VideoPage() {
         {/* Video Card */}
         <div className="bg-white/90 rounded-[28px] shadow-xl p-5 md:p-6">
 
-          {/* Video */}
-          <div className="aspect-video rounded-2xl overflow-hidden shadow-md">
-            <iframe
-              src={getEmbedUrl(topic.videoUrl)}
-              title={topic.title}
-              className="w-full h-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
+<div className="flex justify-center items-center h-56 md:h-64 rounded-2xl bg-gray-100 shadow-md">
+  <button
+    onClick={() => openYouTube(topic.videoUrl)}
+    className="
+      px-8 py-4 rounded-full font-bold text-lg
+      text-white
+      transition active:scale-95 hover:opacity-90
+    "
+    style={{ backgroundColor: "var(--primary-color)" }}
+  >
+    ▶️ YouTube पर टॉपिक वीडियो देखें
+  </button>
+</div>
+
 
           {/* Action Buttons */}
           <div className="mt-6 grid gap-4 sm:grid-cols-3">

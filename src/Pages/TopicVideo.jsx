@@ -16,11 +16,6 @@ const getEmbedUrl = (url) => {
     const videoId = url.split("watch?v=")[1].split("&")[0];
     return `https://www.youtube.com/embed/${videoId}`;
   }
-  const openYouTube = (url) => {
-  if (!url) return;
-  window.open(url, "_blank"); 
-};
-
 
 
   if (url.includes("youtube.com/embed")) {
@@ -31,6 +26,12 @@ const getEmbedUrl = (url) => {
 };
 
 export default function VideoPage() {
+    const openYouTube = (url) => {
+  if (!url) return;
+  window.open(url, "_blank"); 
+};
+
+
   const { moduleId, topicId } = useParams();
   const navigate = useNavigate();
 

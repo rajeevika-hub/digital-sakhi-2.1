@@ -60,6 +60,7 @@ const ExamPage = () => {
       return new Promise((resolve) => {
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.rate = 0.9;
+        utterance.lang = "hi-IN";
 
         if (optionIndex !== null) {
           setActiveAudio({

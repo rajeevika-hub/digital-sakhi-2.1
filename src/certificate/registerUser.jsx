@@ -12,6 +12,7 @@ const UserRegister = () => {
     phone: "",
     email: "",
     address: "",
+     block: "",  
   });
 
   const handleChange = (e) => {
@@ -90,6 +91,36 @@ const UserRegister = () => {
               onChange={handleChange}
             />
           </div>
+
+            {/* Block / Tehsil Dropdown */}
+<div className="relative group">
+  <FaMapMarkerAlt className="absolute text-gray-400 top-3 left-3 group-focus-within:text-pink-500 transition" />
+
+  <select
+    name="block"
+    required
+    value={formData.block}
+    onChange={handleChange}
+    className="w-full p-2 pl-10 pr-10 border rounded-lg appearance-none bg-white 
+    focus:outline-none focus:ring-2 focus:ring-pink-400 
+    shadow-sm hover:shadow-md transition-all duration-300"
+  >
+    <option value="">अपना ब्लॉक / तहसील चुनें</option>
+
+    <option value="Churu">Churu</option>
+    <option value="Ratangarh">Ratangarh</option>
+    <option value="Sardarshahar">Sardarshahar</option>
+    <option value="Sujangarh">Sujangarh</option>
+    <option value="Taranagar">Taranagar</option>
+    <option value="Rajgarh">Rajgarh</option>
+    <option value="Bidasar">Bidasar</option>
+  </select>
+
+  {/* Custom Arrow */}
+  <div className="absolute text-gray-500 right-3 top-3 pointer-events-none group-focus-within:text-pink-500 transition">
+    ▼
+  </div>
+</div>
 
           {/* Address */}
           <div className="relative">

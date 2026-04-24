@@ -15,6 +15,8 @@ import ExamInstructions from "./certificate/instructions";
 import ExamPage from "./certificate/Exam";
 import ResultPage from "./certificate/result";
 import InspirationPage from "./Pages/about/Inscpiration";
+import AdminLogin from "./Pages/about/AdminLogin";
+
 
 function App() {
   return (
@@ -43,6 +45,8 @@ function App() {
         <Route path="/developers" element={<Developers />} />
         <Route path="/inspiration" element={<InspirationPage />} />
         <Route path="/contact" element={<WebsiteContact />} />
+                <Route path="/adminlogin" element={<AdminLogin />} />
+        
 
         {/* certificate routes */}
         <Route path="/login" element={<Login />} />

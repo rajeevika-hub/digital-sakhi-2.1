@@ -27,7 +27,7 @@ const ExamInstructions = () => {
       setLoading(true);
 
       const res = await axios.post(
-        "https://digital-sakhi-backend-4-rapv.onrender.com/api/exam/start",
+        "https://backend.digitalsakhichuru.in/api/exam/start",
         { userId }
       );
 

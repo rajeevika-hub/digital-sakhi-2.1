@@ -115,7 +115,7 @@ const ExamPage = () => {
     const fetchQuestions = async () => {
       try {
         const res = await axios.get(
-          "https://digital-sakhi-backend-4-rapv.onrender.com/api/exam/questions"
+          "https://backend.digitalsakhichuru.in/api/exam/questions"
         );
         setQuestions(res.data.questions);
       } catch (err) {
@@ -158,7 +158,7 @@ const ExamPage = () => {
 
     try {
       const res = await axios.post(
-        "https://digital-sakhi-backend-4-rapv.onrender.com/api/exam/submit",
+        "https://backend.digitalsakhichuru.in/api/exam/submit",
         {
           userId,
           examId,

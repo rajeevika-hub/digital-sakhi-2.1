@@ -62,14 +62,14 @@ export default function InspirationPage() {
       {/* ===== LEADERS ===== */}
       <div className="max-w-5xl mx-auto grid items-center justify-center gap-6 mb-14 md:grid-cols-2">
        <LeaderCard
-    image="/images/durga.jpg"
+    image="/images/durga.jpeg"
     name="Durga Devi Dhaka"
     role="District Project Manager, Churu"
   />
 
   {/* Leader 2 */}
   <LeaderCard
-    image="/images/rakesh.jpg"
+    image="/images/rakesh.jpeg"
     name="Rakesh Kumar Chhepat"
     role="District Resource Cell In-Charge, Churu"
   />
